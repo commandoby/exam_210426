@@ -9,13 +9,9 @@ public class Circle extends Figure {
 
     private double radius;
 
-    private Circle(double cx, double cy, double lineWidth, Color color) {
-        super(FIGURE_TYPE_CIRCLE, cx, cy, lineWidth, color);
-    }
-
     public Circle(double cx, double cy, double lineWidth, Color color, double radius) {
-        this(cx, cy, lineWidth, color);
-        this.radius = radius < 30 ? 30 : radius;
+        super(FIGURE_TYPE_CIRCLE, cx, cy, lineWidth, color);
+        this.radius = radius;
     }
 
     public double getRadius() {

@@ -5,13 +5,13 @@ import javafx.scene.paint.Color;
 
 import java.util.Objects;
 
-public class Rectangle extends Figure {
+public class Triangle extends Figure {
 
     private double width;
     private double height;
 
-    public Rectangle(double cx, double cy, double lineWidth, Color color, double width, double height) {
-        super(FIGURE_TYPE_RECTANGLE, cx, cy, lineWidth, color);
+    public Triangle(double cx, double cy, double lineWidth, Color color, double width, double height) {
+        super(FIGURE_TYPE_TRIANGLE, cx, cy, lineWidth, color);
         this.width = width;
         this.height = height;
     }
@@ -36,15 +36,15 @@ public class Rectangle extends Figure {
     public void draw(GraphicsContext graphicsContext) {
         graphicsContext.setLineWidth(lineWidth);
         graphicsContext.setStroke(color);
-        graphicsContext.strokeRect(cx - width / 2, cy - height / 2, width, height);
+        graphicsContext.strokePolygon(new double[]{cx, cx - width / 2, cx + width / 2}, new double[]{cy - height * 2 / 3, cy + height / 3, cy + height / 3}, 3);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Rectangle rectangle = (Rectangle) o;
-        return Double.compare(rectangle.width, width) == 0 && Double.compare(rectangle.height, height) == 0;
+        Triangle triangle = (Triangle) o;
+        return Double.compare(triangle.width, width) == 0 && Double.compare(triangle.height, height) == 0;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class Rectangle extends Figure {
 
     @Override
     public String toString() {
-        return "Rectangle{" +
+        return "Triangle{" +
                 "cx=" + cx +
                 ", cy=" + cy +
                 ", lineWidth=" + lineWidth +
