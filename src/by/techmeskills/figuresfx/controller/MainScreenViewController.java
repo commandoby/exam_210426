@@ -1,9 +1,6 @@
 package by.techmeskills.figuresfx.controller;
 
-import by.techmeskills.figuresfx.figures.Circle;
-import by.techmeskills.figuresfx.figures.Figure;
-import by.techmeskills.figuresfx.figures.Rectangle;
-import by.techmeskills.figuresfx.figures.Triangle;
+import by.techmeskills.figuresfx.figures.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
@@ -11,11 +8,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
-import java.util.Random;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class MainScreenViewController implements Initializable {
-    private Figure[] figures;
+    private Queue<Figure> figures;
     private Random random;
 
     @FXML
@@ -24,23 +20,15 @@ public class MainScreenViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         System.out.println("Application initialized.");
-        figures = new Figure[1];
+        figures = new ArrayDeque<>();
         random = new Random(System.currentTimeMillis());
     }
 
     private void addFigure(Figure figure) {
-        if (figures[figures.length - 1] == null) {
-            figures[figures.length - 1] = figure;
-            return;
+        if (figures.size() > 30) {
+            figures.poll();
         }
-
-        Figure[] tmp = new Figure[figures.length + 1];
-        int index = 0;
-        for (; index < figures.length; index++) {
-            tmp[index] = figures[index];
-        }
-        tmp[index] = figure;
-        figures = tmp;
+        figures.offer(figure);
     }
 
     private Figure createdFigure(double x, double y) {
@@ -73,7 +61,7 @@ public class MainScreenViewController implements Initializable {
     }
 
     @FXML
-    private void onMauseClicked(MouseEvent mouseEvent) {
+    private void onMouseClicked(MouseEvent mouseEvent) {
         addFigure(createdFigure(mouseEvent.getX(), mouseEvent.getY()));
         repaint();
     }
