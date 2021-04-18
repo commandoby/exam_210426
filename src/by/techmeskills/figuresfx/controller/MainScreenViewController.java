@@ -34,21 +34,25 @@ public class MainScreenViewController implements Initializable {
     private Figure createdFigure(double x, double y) {
         Figure figure = null;
         Color rgb;
-        switch (random.nextInt(3)) {
+        switch (random.nextInt(4)) {
             case Figure.FIGURE_TYPE_CIRCLE:
                 rgb = Color.rgb(random.nextInt(100), 200 + random.nextInt(50), random.nextInt(100));
-                figure = new Circle(x, y, 1 + random.nextInt(3), rgb, 30 + random.nextInt(25));
+                figure = new Circle(x, y, 2 + random.nextInt(3), rgb, 30 + random.nextInt(25));
                 break;
             case Figure.FIGURE_TYPE_RECTANGLE:
                 rgb = Color.rgb(random.nextInt(100), random.nextInt(100), 200 + random.nextInt(50));
-                figure = new Rectangle(x, y, 1 + random.nextInt(3), rgb, 30 + random.nextInt(30), 30 + random.nextInt(70));
+                figure = new Rectangle(x, y, 2 + random.nextInt(3), rgb, 30 + random.nextInt(30), 30 + random.nextInt(70));
                 break;
             case Figure.FIGURE_TYPE_TRIANGLE:
                 rgb = Color.rgb(200 + random.nextInt(50), random.nextInt(100), random.nextInt(100));
-                figure = new Triangle(x, y, 1 + random.nextInt(3), rgb, 30 + random.nextInt(40), 30 + random.nextInt(30));
+                figure = new Triangle(x, y, 2 + random.nextInt(3), rgb, 30 + random.nextInt(40), 30 + random.nextInt(30));
+                break;
+            case Figure.FIGURE_TYPE_STAR:
+                rgb = Color.rgb(200 + random.nextInt(50), 150 + random.nextInt(50), random.nextInt(100));
+                figure = new Star(x, y, 2 + random.nextInt(3), rgb, 15 + random.nextInt(30), 20 + random.nextInt(25), 5 + random.nextInt(10));
                 break;
             default:
-                System.out.println("Uncnoun figure type!");
+                System.out.println("Unknown figure type!");
         }
         return figure;
     }

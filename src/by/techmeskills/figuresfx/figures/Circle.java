@@ -6,7 +6,6 @@ import javafx.scene.paint.Color;
 import java.util.Objects;
 
 public class Circle extends Figure {
-
     private double radius;
 
     public Circle(double cx, double cy, double lineWidth, Color color, double radius) {

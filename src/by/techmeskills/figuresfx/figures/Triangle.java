@@ -6,7 +6,6 @@ import javafx.scene.paint.Color;
 import java.util.Objects;
 
 public class Triangle extends Figure {
-
     private double width;
     private double height;
 
