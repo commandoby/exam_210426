@@ -44,7 +44,7 @@ public class Star extends Figure {
 
     @Override
     public void draw(GraphicsContext graphicsContext) {
-        //double angleStep = Math.toRadians(180/rayNumber);
+        //double angleStep = Math.toRadians(180/rayNumber); //работает не корректно
         double angleStep = Math.PI / rayNumber;
         ArrayList<Double> angleList = new ArrayList<>();
         for (int i = 0; i < rayNumber * 2 + 1; i++) {
