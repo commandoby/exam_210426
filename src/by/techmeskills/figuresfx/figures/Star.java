@@ -1,12 +1,14 @@
 package by.techmeskills.figuresfx.figures;
 
+import by.techmeskills.figuresfx.drawutils.Drawable;
+import by.techmeskills.figuresfx.exceptions.WrongShapeException;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Star extends Figure {
+public class Star extends Figure implements Drawable {
     private int starRadius;
     private int rayLength;
     private int rayNumber;
@@ -43,7 +45,11 @@ public class Star extends Figure {
     }
 
     @Override
-    public void draw(GraphicsContext graphicsContext) {
+    public void draw(GraphicsContext graphicsContext) throws WrongShapeException {
+        if (rayNumber < 5 || rayNumber > 15) {
+            rayNumber = 5;
+            throw new WrongShapeException("Invalid number of star rays.");
+        }
         //double angleStep = Math.toRadians(180/rayNumber); //работает не корректно
         double angleStep = Math.PI / rayNumber;
         ArrayList<Double> angleList = new ArrayList<>();

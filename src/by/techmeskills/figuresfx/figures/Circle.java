@@ -1,11 +1,12 @@
 package by.techmeskills.figuresfx.figures;
 
+import by.techmeskills.figuresfx.drawutils.Drawable;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 import java.util.Objects;
 
-public class Circle extends Figure {
+public class Circle extends Figure implements Drawable {
     private double radius;
 
     public Circle(double cx, double cy, double lineWidth, Color color, double radius) {

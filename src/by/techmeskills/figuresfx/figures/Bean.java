@@ -1,17 +1,18 @@
 package by.techmeskills.figuresfx.figures;
 
+import by.techmeskills.figuresfx.drawutils.Drawable;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 
 import java.util.Objects;
 
-public class Bean extends Figure {
+public class Bean extends Figure implements Drawable {
     private int innerRadius;
-    private int beanThickness;
-    private int beanLength;
+    private double beanThickness;
+    private double beanLength;
 
-    public Bean(double cx, double cy, double lineWidth, Color color, int innerRadius, int beanThickness, int beanLength) {
+    public Bean(double cx, double cy, double lineWidth, Color color, int innerRadius, double beanThickness, double beanLength) {
         super(FIGURE_TYPE_BEAN, cx, cy, lineWidth, color);
         this.innerRadius = innerRadius;
         this.beanThickness = beanThickness;
@@ -26,7 +27,7 @@ public class Bean extends Figure {
         this.innerRadius = innerRadius;
     }
 
-    public int getBeanThickness() {
+    public double getBeanThickness() {
         return beanThickness;
     }
 
@@ -34,7 +35,7 @@ public class Bean extends Figure {
         this.beanThickness = beanThickness;
     }
 
-    public int getBeanLength() {
+    public double getBeanLength() {
         return beanLength;
     }
 

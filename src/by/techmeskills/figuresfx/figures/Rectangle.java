@@ -1,11 +1,12 @@
 package by.techmeskills.figuresfx.figures;
 
+import by.techmeskills.figuresfx.drawutils.Drawable;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
 import java.util.Objects;
 
-public class Rectangle extends Figure {
+public class Rectangle extends Figure implements Drawable {
     private double width;
     private double height;
 

@@ -1,5 +1,6 @@
 package by.techmeskills.figuresfx.figures;
 
+import by.techmeskills.figuresfx.exceptions.WrongShapeException;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
@@ -61,5 +62,5 @@ public abstract class Figure {
         this.color = color;
     }
 
-    public abstract void draw(GraphicsContext graphicsContext);
+    public abstract void draw(GraphicsContext graphicsContext) throws WrongShapeException;
 }
