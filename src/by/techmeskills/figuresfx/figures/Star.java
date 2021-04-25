@@ -1,6 +1,5 @@
 package by.techmeskills.figuresfx.figures;
 
-import by.techmeskills.figuresfx.drawutils.Drawable;
 import by.techmeskills.figuresfx.exceptions.WrongShapeException;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -8,7 +7,7 @@ import javafx.scene.paint.Color;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class Star extends Figure implements Drawable {
+public class Star extends Figure {
     private int starRadius;
     private int rayLength;
     private int rayNumber;

@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.techmeskills.figuresfx.controller.MainScreenViewController">
    <children>
       <Canvas fx:id="canvas" height="600.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#onMouseClicked" width="1024.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="button" layoutX="958.0" layoutY="14.0" mnemonicParsing="false" onAction="#buttonAction" text="Clear" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+      <Button fx:id="save" layoutX="949.0" layoutY="48.0" mnemonicParsing="false" onAction="#saveAction" text="Save" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0" />
+      <Button fx:id="load" layoutX="949.0" layoutY="86.0" mnemonicParsing="false" onAction="#loadAction" text="Load" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="80.0" />
+      <CheckBox fx:id="circle" layoutX="928.0" layoutY="123.0" mnemonicParsing="false" onAction="#circleAction" selected="true" text="Circle" AnchorPane.leftAnchor="940.0" AnchorPane.topAnchor="120.0" />
+      <CheckBox fx:id="rectangle" layoutX="928.0" layoutY="159.0" mnemonicParsing="false" onAction="#rectangleAction" selected="true" text="Rectangle" AnchorPane.leftAnchor="940.0" AnchorPane.topAnchor="145.0" />
+      <CheckBox fx:id="triangle" layoutX="928.0" layoutY="201.0" mnemonicParsing="false" onAction="#triangleAction" selected="true" text="Triangle" AnchorPane.leftAnchor="940.0" AnchorPane.topAnchor="170.0" />
+      <CheckBox fx:id="star" layoutX="928.0" layoutY="245.0" mnemonicParsing="false" onAction="#starAction" selected="true" text="Star" AnchorPane.leftAnchor="940.0" AnchorPane.topAnchor="195.0" />
+      <CheckBox fx:id="bean" layoutX="928.0" layoutY="283.0" mnemonicParsing="false" onAction="#beanAction" selected="true" text="Bean" AnchorPane.leftAnchor="940.0" AnchorPane.topAnchor="220.0" />
    </children>
 </AnchorPane>

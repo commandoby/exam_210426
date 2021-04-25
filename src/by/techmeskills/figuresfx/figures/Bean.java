@@ -1,13 +1,12 @@
 package by.techmeskills.figuresfx.figures;
 
-import by.techmeskills.figuresfx.drawutils.Drawable;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.ArcType;
 
 import java.util.Objects;
 
-public class Bean extends Figure implements Drawable {
+public class Bean extends Figure {
     private int innerRadius;
     private double beanThickness;
     private double beanLength;
