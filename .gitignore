@@ -1,5 +1,9 @@
 .idea/
+.settings/
 out/
+
+.classpath
+.project
 exam.iml
 
   
@@ -8,3 +12,5 @@ exam.iml
 
 # Log file
 *.log
+/bin/
+/target/
