@@ -13,7 +13,6 @@ public class SaveLoad {
         save(figureList);
     }
 
-    //запись фигур
     public void save(ArrayDeque<Figure> figureList) throws SaveLoadException {
         figureSaveList = new ArrayDeque<>();
         if (!figureList.isEmpty()) {
@@ -23,7 +22,6 @@ public class SaveLoad {
         }
     }
 
-    //чтение фигур
     public ArrayDeque<Figure> load() throws SaveLoadException {
         if (!figureSaveList.isEmpty()) {
             return figureSaveList;

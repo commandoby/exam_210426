@@ -35,7 +35,6 @@ public class MainScreenViewController implements Initializable {
         figureTypeActive = new boolean[]{true, true, true, true, true};
     }
 
-    //добавляем фигуру в коллекцию
     private void addFigure(Figure figure) {
         if (figures.size() > 30) {
             figures.poll();
@@ -44,7 +43,6 @@ public class MainScreenViewController implements Initializable {
         figures.offer(figure);
     }
 
-    //генерируем фигуру
     private Figure createdFigure(double x, double y) throws UnknownFigureTypeException {
         CreatedFigureType[] figureType = new CreatedFigureType[5];
         figureType[Figure.FIGURE_TYPE_CIRCLE] = () -> {
@@ -78,7 +76,6 @@ public class MainScreenViewController implements Initializable {
         }
     }
 
-    //очищаем и перерисовываем окно
     private void repaint() {
         try {
             canvas.getGraphicsContext2D().clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
@@ -90,7 +87,6 @@ public class MainScreenViewController implements Initializable {
         }
     }
 
-    @FXML //действия на клик мыши
     private void onMouseClicked(MouseEvent mouseEvent) {
         try {
             addFigure(createdFigure(mouseEvent.getX(), mouseEvent.getY()));
@@ -100,14 +96,12 @@ public class MainScreenViewController implements Initializable {
         }
     }
 
-    //кнопка очистки
     public void buttonAction() {
         figures = new ArrayDeque<>();
         repaint();
         log.info("Window cleared.");
     }
 
-    //кнопка сохранения
     public void saveAction() {
         try {
             saveLoad.add(new SaveLoad(figures));
@@ -117,7 +111,6 @@ public class MainScreenViewController implements Initializable {
         }
     }
 
-    //кнопка загрузки
     public void loadAction() {
         try {
             if (!saveLoad.isEmpty()) {
@@ -138,27 +131,22 @@ public class MainScreenViewController implements Initializable {
         }
     }
 
-    //переключатель круга
     public void circleAction() {
         figureTypeActive[Figure.FIGURE_TYPE_CIRCLE] = !figureTypeActive[Figure.FIGURE_TYPE_CIRCLE];
     }
 
-    //переключатель прямоугольника
     public void rectangleAction() {
         figureTypeActive[Figure.FIGURE_TYPE_RECTANGLE] = !figureTypeActive[Figure.FIGURE_TYPE_RECTANGLE];
     }
 
-    //переключатель треугольника
     public void triangleAction() {
         figureTypeActive[Figure.FIGURE_TYPE_TRIANGLE] = !figureTypeActive[Figure.FIGURE_TYPE_TRIANGLE];
     }
 
-    //переключатель звезды
     public void starAction() {
         figureTypeActive[Figure.FIGURE_TYPE_STAR] = !figureTypeActive[Figure.FIGURE_TYPE_STAR];
     }
 
-    //переключатель боба
     public void beanAction() {
         figureTypeActive[Figure.FIGURE_TYPE_BEAN] = !figureTypeActive[Figure.FIGURE_TYPE_BEAN];
     }
