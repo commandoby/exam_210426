@@ -17,7 +17,6 @@ public class Drawer<T extends Figure & Drawable> {
         figuresToDraw.addAll(drawList);
     }
 
-    //отрисовываем фигуры
     public void draw(GraphicsContext graphicsContext) throws UnknownFigureTypeException {
         for (Figure figure : figuresToDraw) {
             if (figure != null) {

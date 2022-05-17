@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: by.techmeskills.figuresfx.FiguresFxApp
+Class-Path: 1.00
+
